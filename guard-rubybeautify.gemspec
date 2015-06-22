@@ -5,7 +5,7 @@ require 'guard/rubybeautify/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "guard-rubybeautify"
-  spec.version       = Guard::Rubybeautify::VERSION
+  spec.version       = Guard::RubybeautifyVersion::VERSION
   spec.authors       = ["Ernie Brodeur"]
   spec.email         = ["ebrodeur@ujami.net"]
 
@@ -25,6 +25,9 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency 'guard-compat', '~> 1.1'
+
 
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"

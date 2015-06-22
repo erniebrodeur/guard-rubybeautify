@@ -1,0 +1,3 @@
+guard :rubybeautify do
+	watch(%r{lib/.+\.rb})
+end
