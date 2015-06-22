@@ -14,14 +14,14 @@ module Guard
     end
 
     def start
-      require 'pry'
-      binding.pry
     end
 
     def stop
     end
 
     def run_on_modifications(paths)
+      require 'pry'
+      binding.pry
     end
   end
 end
