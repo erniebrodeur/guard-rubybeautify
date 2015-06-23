@@ -13,15 +13,16 @@ module Guard
       }.merge(options)
     end
 
-    def start
-    end
-
-    def stop
-    end
-
     def run_on_modifications(paths)
-      require 'pry'
-      binding.pry
+      unless @beautified
+        @beautified = true
+        paths.each do |file|
+		      `ruby-beautify #{file} --overwrite`
+          Compat::UI.info "Ruby beautify executed against #{file}"
+        end
+      else
+        @beautified = false
+      end
     end
   end
 end

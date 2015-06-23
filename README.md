@@ -1,10 +1,10 @@
 # Guard::Rubybeautify
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/guard/rubybeautify`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A guard to automatically beautify ruby files in a project.
 
 ## Installation
+
+Please be sure to have [Guard](https://github.com/guard/guard) installed before continuing.
 
 Add this line to your application's Gemfile:
 
@@ -22,7 +22,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add a guardfile entry:
+
+```ruby
+guard :rubybeautify do
+	watch(%r{lib/.+\.rb})
+end
+```
+
+or call
+
+  $ guard init rubybeautify
+
+to have a section added automatically.
 
 ## Development
 

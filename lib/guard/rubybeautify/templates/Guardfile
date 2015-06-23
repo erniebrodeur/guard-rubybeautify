@@ -1,3 +1,4 @@
+# Add any file/pattern you want to have beautified beyond these.
 guard :rubybeautify do
 	watch(%r{lib/.+\.rb})
 end
