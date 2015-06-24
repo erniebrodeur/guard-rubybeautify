@@ -36,6 +36,17 @@ or call
 
 to have a section added automatically.
 
+### Options
+
+This guard also comes with three options built in:
+* count: 1  # The count of indent chars.
+* style: :tabs # the type, tab or spaces.
+* grace_period: 5  # amount of time to not trigger further beautifies (stops loops).
+
+`grace_period` is the only one that is unique to this gem.  It's the period of time to *not* monitor for changes.  Since the gem will trigger an overwrite, this can trigger specs and doc generation.  Which then trigger more beautifies, that trigger more of the other guards.
+
+To avoid this, set this to a period longer then a single modification runs.  Since this has no global mode, you don't need to worry about what happens when you press `enter`.  It will only impact open files that are saved.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
