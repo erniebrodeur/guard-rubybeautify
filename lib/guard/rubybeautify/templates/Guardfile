@@ -1,4 +1,13 @@
 # Add any file/pattern you want to have beautified beyond these.
 guard :rubybeautify do
 	watch(%r{lib/.+\.rb})
+	watch('Gemfile')
+	watch('%r{.+.gemspec}')
 end
+
+### This is a more complete example including all the possible options.
+# guard :rubybeautify, count: 2, style: :spaces, grace_period: 1 do
+# watch(%r{lib/.+\.rb})
+# watch('Gemfile')
+# watch('%r{.+.gemspec}')
+# end

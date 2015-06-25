@@ -47,6 +47,13 @@ This guard also comes with three options built in:
 
 To avoid this, set this to a period longer then a single modification runs.  Since this has no global mode, you don't need to worry about what happens when you press `enter`.  It will only impact open files that are saved.
 
+An example with all the options.
+
+```ruby
+guard :rubybeautify, count: 2, style: :spaces, grace_period: 1 do
+	watch(%r{lib/.+\.rb})
+end
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
